@@ -31,6 +31,10 @@ namespace ExemplosPadrõesProjeto.Models
 
         public DbSet<ArmarioFuturista> ArmariosFuturistas { get; set; }
 
+        public DbSet<CamaBarroca> CamaBarrocas { get; set; }
+
+        public DbSet<CamaFuturista> CamaFuturistas { get; set; }
+
         public DbSet<Casa> Casas { get; set; }
     }
 }

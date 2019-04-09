@@ -10,6 +10,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Estilo, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
+            <br />
             @Html.DropDownListFor(model => model.Estilo, Html.GetEnumSelectList<ExemplosPadrõesProjeto.Models.Moveis.EstiloEnum>(), htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Estilo, "", new { @class = "text-danger" })
         </div>
@@ -19,6 +20,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
+            <br />
             @if (Model.Id == 0)
             {
                 <button asp-action="Salvar" asp-route-Id=@Model.Id class="btn btn-primary">Criar</button>
@@ -29,16 +31,19 @@
             }
         </div>
 
-
+        <br /><br />
     </div>
     @if (Model.Id > 0) { 
     <div class="form-group">
+        <br /><br /><br /><br /><br />
         @Html.LabelFor(model => model.Moveis, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownList("CasaCriarId", Html.GetEnumSelectList<ExemplosPadrõesProjeto.Models.MovelEnum>(), htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.Estilo, "", new { @class = "text-danger" })
+            <br />
+            <button asp-action="CriarMovel" asp-route-CasaId=@Model.Id class="btn btn-primary">Salvar</button><br /><br /><br />
         </div>
-        <button asp-action="CriarMovel" asp-route-CasaId=@Model.Id  class="btn btn-primary">Salvar</button>
+
         <br />
         <div class="col-md-10">
             @if (Model.Moveis != null && Model.Moveis.Count > 0)

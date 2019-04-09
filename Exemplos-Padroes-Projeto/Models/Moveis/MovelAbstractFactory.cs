@@ -23,11 +23,14 @@ namespace ExemplosPadrõesProjeto.Models.Moveis
                     return CriarMesa();
                 case MovelEnum.Armario:
                     return CriarArmario();
+                case MovelEnum.Cama:
+                    return CriarCama();
                 default:
                     return null;
             }
         }
-
+        protected abstract Cama CriarCama();
+        
         protected abstract Mesa CriarMesa();
 
 
